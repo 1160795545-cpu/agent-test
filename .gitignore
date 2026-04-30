@@ -1,0 +1,7 @@
+.DS_Store
+Thumbs.db
+
+# Temporary editor/system files
+*.swp
+*.swo
+*~

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>智能体体验入口</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <main>
+        <section class="topbar" aria-label="页面标题">
+          <div class="hero-copy">
+            <p class="panel-tag">Multimodal Intelligence</p>
+            <h1>智能体体验入口</h1>
+            <p class="hero-text">
+              面向图片理解、事件判断与视频摘要的统一体验页。通过更直观的入口和结果展示，快速完成能力演示与方案讲解。
+            </p>
+            <div class="hero-pills">
+              <span>事件判断</span>
+              <span>图像描述</span>
+              <span>视频摘要</span>
+            </div>
+          </div>
+
+          <div class="hero-visual" aria-hidden="true">
+            <div class="hero-grid"></div>
+            <div class="hero-orbit hero-orbit-a"></div>
+            <div class="hero-orbit hero-orbit-b"></div>
+            <div class="hero-core">
+              <strong>AI Vision Workflow</strong>
+              <small>Upload · Analyze · Summarize</small>
+            </div>
+            <div class="hero-float hero-float-a">Image</div>
+            <div class="hero-float hero-float-b">Video</div>
+            <div class="hero-float hero-float-c">Rule</div>
+          </div>
+        </section>
+
+        <section class="content-shell">
+          <aside class="entry-grid" aria-label="功能入口">
+            <button class="entry-card active" data-target="event-check">
+              <div class="entry-card-top">
+                <span class="entry-index">01</span>
+                <span class="entry-action">点击进入</span>
+              </div>
+              <strong>事件判断</strong>
+              <small>基于图片和规则判断是否发生目标事件</small>
+              <span class="entry-arrow" aria-hidden="true">→</span>
+            </button>
+
+            <button class="entry-card" data-target="image-caption">
+              <div class="entry-card-top">
+                <span class="entry-index">02</span>
+                <span class="entry-action">点击进入</span>
+              </div>
+              <strong>图像描述</strong>
+              <small>围绕关注方向生成图片描述结果</small>
+              <span class="entry-arrow" aria-hidden="true">→</span>
+            </button>
+
+            <button class="entry-card" data-target="video-summary">
+              <div class="entry-card-top">
+                <span class="entry-index">03</span>
+                <span class="entry-action">点击进入</span>
+              </div>
+              <strong>视频摘要</strong>
+              <small>生成分帧描述并汇总视频摘要</small>
+              <span class="entry-arrow" aria-hidden="true">→</span>
+            </button>
+          </aside>
+
+          <section class="workspace">
+            <article class="tool-panel active" id="event-check">
+              <div class="panel-head">
+                <div>
+                  <p class="panel-tag">事件判断</p>
+                  <h2>上传图片并输入判断规则</h2>
+                </div>
+                <span class="panel-badge">Image + Rule</span>
+              </div>
+
+              <div class="panel-grid">
+                <div class="input-card">
+                  <label class="upload-box">
+                    <input type="file" accept="image/*" id="eventImage" />
+                    <span>点击上传图片</span>
+                    <small>支持 JPG / PNG / WEBP</small>
+                  </label>
+                  <div class="preview media-preview" id="eventImagePreview">
+                    <p>图片预览区域</p>
+                  </div>
+                  <label class="field-label" for="eventRule">判断规则</label>
+                  <textarea
+                    id="eventRule"
+                    rows="5"
+                    placeholder="例如：判断图片中是否有人未佩戴安全帽进入施工区域。"
+                  ></textarea>
+                  <button class="run-btn" data-run="event">运行分析</button>
+                </div>
+
+                <div class="result-card" id="eventResult">
+                  <div class="placeholder-result">
+                    <p>结果展示区</p>
+                    <small>将输出相关图像描述、事件是否发生和简要依据。</small>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="tool-panel" id="image-caption">
+              <div class="panel-head">
+                <div>
+                  <p class="panel-tag">图像描述</p>
+                  <h2>上传图片并设定关注方向</h2>
+                </div>
+                <span class="panel-badge">Image + Focus</span>
+              </div>
+
+              <div class="panel-grid">
+                <div class="input-card">
+                  <label class="upload-box">
+                    <input type="file" accept="image/*" id="captionImage" />
+                    <span>点击上传图片</span>
+                    <small>支持 JPG / PNG / WEBP</small>
+                  </label>
+                  <div class="preview media-preview" id="captionImagePreview">
+                    <p>图片预览区域</p>
+                  </div>
+                  <label class="field-label" for="captionFocus">关注方向</label>
+                  <textarea
+                    id="captionFocus"
+                    rows="5"
+                    placeholder="例如：重点描述人员动作、场景环境和潜在风险点。"
+                  ></textarea>
+                  <button class="run-btn" data-run="caption">运行分析</button>
+                </div>
+
+                <div class="result-card" id="captionResult">
+                  <div class="placeholder-result">
+                    <p>结果展示区</p>
+                    <small>将输出与关注方向相关的图像描述结果。</small>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="tool-panel" id="video-summary">
+              <div class="panel-head">
+                <div>
+                  <p class="panel-tag">视频摘要</p>
+                  <h2>上传视频并生成摘要</h2>
+                </div>
+                <span class="panel-badge">Video + Summary</span>
+              </div>
+
+              <div class="panel-grid">
+                <div class="input-card">
+                  <label class="upload-box">
+                    <input type="file" accept="video/*" id="summaryVideo" />
+                    <span>点击上传视频</span>
+                    <small>支持 MP4 / MOV / WEBM</small>
+                  </label>
+                  <div class="preview media-preview" id="summaryVideoPreview">
+                    <p>视频预览区域</p>
+                  </div>
+                  <label class="field-label" for="videoFocus">关注方向</label>
+                  <textarea
+                    id="videoFocus"
+                    rows="5"
+                    placeholder="例如：关注人员活动轨迹、关键动作变化和异常行为。"
+                  ></textarea>
+                  <button class="run-btn" data-run="video">运行分析</button>
+                </div>
+
+                <div class="result-card" id="videoResult">
+                  <div class="placeholder-result">
+                    <p>结果展示区</p>
+                    <small>将输出逐帧描述和整段视频的摘要总结。</small>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
