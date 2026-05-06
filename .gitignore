@@ -5,3 +5,19 @@ Thumbs.db
 *.swp
 *.swo
 *~
+
+# IDE/editor settings
+.vscode/
+.idea/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Frontend dependencies and caches
+node_modules/
+dist/
+build/
+coverage/
+.cache/
