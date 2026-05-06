@@ -58,7 +58,7 @@ textarea {
 .page-shell {
   width: min(1280px, calc(100% - 32px));
   margin: 0 auto;
-  padding: 28px 0 60px;
+  padding: 18px 0 60px;
 }
 
 .topbar {
@@ -66,11 +66,11 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 28px;
-  margin-bottom: 26px;
-  padding: 32px;
+  gap: 18px;
+  margin-bottom: 18px;
+  padding: 20px 24px;
   overflow: hidden;
-  border-radius: 34px;
+  border-radius: 28px;
   background:
     linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(232, 243, 255, 0.84));
   border: 1px solid var(--line);
@@ -81,10 +81,10 @@ textarea {
 .topbar::before {
   content: "";
   position: absolute;
-  right: -80px;
-  bottom: -100px;
-  width: 320px;
-  height: 320px;
+  right: -88px;
+  bottom: -118px;
+  width: 260px;
+  height: 260px;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(23, 115, 246, 0.16), transparent 66%);
 }
@@ -104,8 +104,8 @@ textarea {
 }
 
 .topbar h1 {
-  margin-bottom: 14px;
-  font-size: clamp(36px, 4.8vw, 58px);
+  margin-bottom: 8px;
+  font-size: clamp(28px, 4vw, 42px);
 }
 
 .panel-tag {
@@ -117,18 +117,19 @@ textarea {
 }
 
 .hero-text {
-  max-width: 38ch;
+  max-width: none;
   margin: 0;
   color: var(--muted);
-  font-size: 17px;
-  line-height: 1.8;
+  font-size: 14px;
+  line-height: 1.55;
+  white-space: nowrap;
 }
 
 .hero-pills {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 20px;
+  gap: 8px;
+  margin-top: 14px;
 }
 
 .hero-pills span,
@@ -136,12 +137,12 @@ textarea {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 11px 16px;
+  padding: 8px 12px;
   border-radius: 999px;
   border: 1px solid rgba(23, 115, 246, 0.16);
   background: linear-gradient(135deg, rgba(23, 115, 246, 0.1), rgba(0, 181, 255, 0.08));
   color: var(--accent-deep);
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.04em;
   white-space: nowrap;
@@ -149,10 +150,10 @@ textarea {
 
 .hero-visual {
   position: relative;
-  flex: 0 0 330px;
-  min-height: 270px;
+  flex: 0 0 248px;
+  min-height: 170px;
   overflow: hidden;
-  border-radius: 30px;
+  border-radius: 24px;
   background:
     radial-gradient(circle at center, rgba(255, 255, 255, 0.65), rgba(221, 237, 255, 0.42)),
     linear-gradient(180deg, rgba(239, 247, 255, 0.76), rgba(220, 236, 255, 0.62));
@@ -166,7 +167,7 @@ textarea {
   background-image:
     linear-gradient(rgba(23, 115, 246, 0.06) 1px, transparent 1px),
     linear-gradient(90deg, rgba(23, 115, 246, 0.06) 1px, transparent 1px);
-  background-size: 24px 24px;
+  background-size: 18px 18px;
 }
 
 .hero-orbit {
@@ -178,24 +179,24 @@ textarea {
 }
 
 .hero-orbit-a {
-  width: 228px;
-  height: 228px;
+  width: 148px;
+  height: 148px;
 }
 
 .hero-orbit-b {
-  width: 152px;
-  height: 152px;
+  width: 98px;
+  height: 98px;
 }
 
 .hero-core {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 176px;
-  height: 176px;
+  width: 116px;
+  height: 116px;
   display: grid;
   place-items: center;
-  padding: 24px;
+  padding: 16px;
   text-align: center;
   border-radius: 50%;
   transform: translate(-50%, -50%);
@@ -208,41 +209,41 @@ textarea {
 
 .hero-core strong {
   color: var(--text);
-  font-size: 18px;
+  font-size: 12px;
 }
 
 .hero-core small {
   color: var(--muted);
-  font-size: 12px;
-  letter-spacing: 0.08em;
+  font-size: 9px;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
 .hero-float {
   position: absolute;
-  padding: 8px 12px;
+  padding: 6px 10px;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.86);
   border: 1px solid rgba(23, 115, 246, 0.14);
   color: var(--accent-deep);
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 700;
   box-shadow: var(--shadow-soft);
 }
 
 .hero-float-a {
-  top: 32px;
-  right: 42px;
+  top: 20px;
+  right: 20px;
 }
 
 .hero-float-b {
-  bottom: 34px;
-  left: 34px;
+  bottom: 18px;
+  left: 18px;
 }
 
 .hero-float-c {
-  top: 112px;
-  left: 28px;
+  top: 72px;
+  left: 16px;
 }
 
 .content-shell {
@@ -664,6 +665,7 @@ textarea:focus {
   .hero-visual {
     width: 100%;
     flex: none;
+    min-height: 180px;
   }
 }
 
@@ -692,7 +694,7 @@ textarea:focus {
   }
 
   .hero-visual {
-    min-height: 220px;
+    min-height: 160px;
   }
 
   .panel-head {
